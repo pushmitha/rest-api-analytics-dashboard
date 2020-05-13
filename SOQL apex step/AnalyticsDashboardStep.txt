@@ -45,7 +45,6 @@ global with sharing class AnalyticsDashboardStep {
             this.groups = groups;
         }
     }
-    // Combined Structre of Data and Metadata
     public class ChartFormatJSON {
         public List<WrappedData> data;
         public ReturnMetadata metadata;
