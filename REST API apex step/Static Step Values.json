@@ -1,0 +1,130 @@
+"static_1": {
+	"broadcastFacet": true,
+	"columns": {
+		"label": {
+			"type": "string"
+		}
+	},
+	"label": "",
+	"selectMode": "singlerequired",
+	"type": "staticflex",
+	"values": [
+		{
+			"label": "Total"
+		},
+		{
+			"label": "Maharashtra"
+		},
+		{
+			"label": "Gujarat"
+		},
+		{
+			"label": "Delhi"
+		},
+		{
+			"label": "Madhya Pradesh"
+		},
+		{
+			"label": "Rajasthan"
+		},
+		{
+			"label": "Tamil Nadu"
+		},
+		{
+			"label": "Uttar Pradesh"
+		},
+		{
+			"label": "Andhra Pradesh"
+		},
+		{
+			"label": "Telangana"
+		},
+		{
+			"label": "West Bengal"
+		},
+		{
+			"label": "Jammu and Kashmir"
+		},
+		{
+			"label": "Karnataka"
+		},
+		{
+			"label": "Kerala"
+		},
+		{
+			"label": "Bihar"
+		},
+		{
+			"label": "Punjab"
+		},
+		{
+			"label": "Haryana"
+		},
+		{
+			"label": "Odisha"
+		},
+		{
+			"label": "Jharkhand"
+		},
+		{
+			"label": "Chandigarh"
+		},
+		{
+			"label": "Uttarakhand"
+		},
+		{
+			"label": "Himachal Pradesh"
+		},
+		{
+			"label": "Assam"
+		},
+		{
+			"label": "Chhattisgarh"
+		},
+		{
+			"label": "Andaman and Nicobar Islands"
+		},
+		{
+			"label": "Ladakh"
+		},
+		{
+			"label": "Meghalaya"
+		},
+		{
+			"label": "Puducherry"
+		},
+		{
+			"label": "Goa"
+		},
+		{
+			"label": "Manipur"
+		},
+		{
+			"label": "Tripura"
+		},
+		{
+			"label": "Mizoram"
+		},
+		{
+			"label": "Arunachal Pradesh"
+		},
+		{
+			"label": "Nagaland"
+		},
+		{
+			"label": "Dadra and Nagar Haveli"
+		},
+		{
+			"label": "Daman and Diu"
+		},
+		{
+			"label": "Lakshadweep"
+		},
+		{
+			"label": "Sikkim"
+		}
+	],
+	"numbers": [],
+	"strings": [],
+	"groups": []
+},

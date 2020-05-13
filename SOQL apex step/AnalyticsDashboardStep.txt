@@ -1,0 +1,60 @@
+@RestResource(urlMapping='/accountdata')
+global with sharing class AnalyticsDashboardStep {
+    @HttpPost 
+    global static String fetchAccount(String selectedIndustry) {
+        List<Account> dataDisplay = new List<Account>();
+        List<WrappedData> wrpData = new List<WrappedData>();
+        // If the Industry is not selected from the interaction step
+        if (selectedIndustry == null) {
+            dataDisplay = [select Id,Name,Industry,AnnualRevenue,AccountSource from account order by AnnualRevenue desc];
+        }else{
+            dataDisplay = [select Id,Name,Industry,AnnualRevenue,AccountSource from account where industry=:selectedIndustry order by AnnualRevenue desc];
+        }
+        for(Account acc : dataDisplay){
+            wrpData.add(new WrappedData(acc));
+        }  
+        //Serialize the wrapper that you have created with account data
+        return JSON.serialize(new ChartFormatJSON(wrpData));
+    }
+    
+    public class WrappedData{
+        public String Account_Name;
+        public String Account_Id;
+        public String Account_Industry;
+        public String Account_AccountSource;
+        public Decimal Account_AnnualRevenue;
+        
+        public WrappedData(){}
+        
+        public WrappedData(Account data){
+            this.Account_Name = data.name;
+            this.Account_Id = data.Id;
+            this.Account_Industry = data.Industry;
+            this.Account_AccountSource = data.AccountSource;
+            this.Account_AnnualRevenue = data.AnnualRevenue;
+        }
+    }
+    public class ReturnMetadata {
+        public List<String> strings; 
+        public List<String> numbers;
+        public List<String> groups;  
+        
+        public ReturnMetadata(List<String> strings, List<String> numbers, List<String> groups) {
+            this.strings = strings;
+            this.numbers = numbers;
+            this.groups = groups;
+        }
+    }
+    // Combined Structre of Data and Metadata
+    public class ChartFormatJSON {
+        public List<WrappedData> data;
+        public ReturnMetadata metadata;
+        
+        public ChartFormatJSON(List<WrappedData> data) {
+            this.data = data;
+            this.metadata = new ReturnMetadata(new List<String>{'Account_Id','Account_Name','Account_Industry'}, 
+                                                new List<String>{'Account_AnnualRevenue'}, 
+                                                new List<String>{'Account_Name'});
+        }   
+    }  
+}

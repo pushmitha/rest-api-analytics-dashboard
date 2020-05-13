@@ -1,0 +1,639 @@
+{
+    "label": "Covid '19",
+    "mobileDisabled": false,
+    "state": {
+        "dataSourceLinks": [],
+        "filters": [],
+        "gridLayouts": [
+            {
+                "name": "Default",
+                "numColumns": 22,
+                "pages": [
+                    {
+                        "label": "Untitled",
+                        "name": "4f300f43-eed0-4088-a8ea-95e9844308c3",
+                        "navigationHidden": false,
+                        "widgets": [
+                            {
+                                "colspan": 22,
+                                "column": 0,
+                                "name": "table_1",
+                                "row": 9,
+                                "rowspan": 6,
+                                "widgetStyle": {}
+                            },
+                            {
+                                "colspan": 5,
+                                "column": 17,
+                                "name": "listselector_1",
+                                "row": 1,
+                                "rowspan": 2,
+                                "widgetStyle": {
+                                    "backgroundColor": "#091A3E",
+                                    "borderColor": "#E6ECF2",
+                                    "borderEdges": [
+                                        "all"
+                                    ],
+                                    "borderRadius": 4,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 0,
+                                "name": "number_1",
+                                "row": 4,
+                                "rowspan": 1,
+                                "widgetStyle": {
+                                    "backgroundColor": "#335779",
+                                    "borderColor": "#E6ECF2",
+                                    "borderEdges": [],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 22,
+                                "column": 0,
+                                "name": "container_1",
+                                "row": 1,
+                                "rowspan": 7,
+                                "widgetStyle": {
+                                    "backgroundColor": "#335779",
+                                    "borderColor": "#E6ECF2",
+                                    "borderEdges": [],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 0,
+                                "name": "number_2",
+                                "row": 3,
+                                "rowspan": 1,
+                                "widgetStyle": {
+                                    "backgroundColor": "#335779",
+                                    "borderColor": "#E6ECF2",
+                                    "borderEdges": [],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 17,
+                                "column": 0,
+                                "name": "text_1",
+                                "row": 1,
+                                "rowspan": 2,
+                                "widgetStyle": {
+                                    "backgroundColor": "#091A3E",
+                                    "borderColor": "#FFFFFF",
+                                    "borderEdges": [],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 22,
+                                "column": 0,
+                                "name": "text_2",
+                                "row": 0,
+                                "rowspan": 1,
+                                "widgetStyle": {
+                                    "backgroundColor": "#091A3E",
+                                    "borderColor": "#FFFFFF",
+                                    "borderEdges": [],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 0,
+                                "name": "number_3",
+                                "row": 5,
+                                "rowspan": 1,
+                                "widgetStyle": {
+                                    "backgroundColor": "#335779",
+                                    "borderColor": "#E6ECF2",
+                                    "borderEdges": [],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 6,
+                                "column": 0,
+                                "name": "number_4",
+                                "row": 6,
+                                "rowspan": 1,
+                                "widgetStyle": {
+                                    "backgroundColor": "#335779",
+                                    "borderColor": "#E6ECF2",
+                                    "borderEdges": [],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            },
+                            {
+                                "colspan": 16,
+                                "column": 6,
+                                "name": "chart_1",
+                                "row": 3,
+                                "rowspan": 5,
+                                "widgetStyle": {
+                                    "backgroundColor": "#335779",
+                                    "borderEdges": []
+                                }
+                            },
+                            {
+                                "colspan": 22,
+                                "column": 0,
+                                "name": "text_3",
+                                "row": 8,
+                                "rowspan": 1,
+                                "widgetStyle": {
+                                    "backgroundColor": "#091A3E",
+                                    "borderColor": "#E6ECF2",
+                                    "borderEdges": [],
+                                    "borderRadius": 0,
+                                    "borderWidth": 1
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "rowHeight": "normal",
+                "selectors": [],
+                "style": {
+                    "alignmentX": "left",
+                    "alignmentY": "top",
+                    "backgroundColor": "#F2F6FA",
+                    "cellSpacingX": 4,
+                    "cellSpacingY": 4,
+                    "fit": "original",
+                    "gutterColor": "#C5D3E0"
+                },
+                "version": 1
+            }
+        ],
+        "layouts": [],
+        "steps": {
+            "GetStaterecovered": {
+                "query": {
+                    "body": {
+                        "selectedState": "{{cell(static_1.selection, 0, \"label\").asString()}}"
+                    },
+                    "path": "covidrecovered"
+                },
+                "type": "apex"
+            },
+            "GetStateActive": {
+                "query": {
+                    "body": {
+                        "selectedState": "{{cell(static_1.selection, 0, \"label\").asString()}}"
+                    },
+                    "path": "covidactive"
+                },
+                "type": "apex"
+            },
+            "GetStateDelta": {
+                "query": {
+                    "body": {
+                        "selectedState": "{{cell(static_1.selection, 0, \"label\").asString()}}"
+                    },
+                    "path": "coviddelta"
+                },
+                "type": "apex"
+            },
+            "GetStateDeath": {
+                "query": {
+                    "body": {
+                        "selectedState": "{{cell(static_1.selection, 0, \"label\").asString()}}"
+                    },
+                    "path": "coviddeath"
+                },
+                "type": "apex"
+            },
+            "static_1": {
+                "broadcastFacet": true,
+                "columns": {
+                    "label": {
+                        "type": "string"
+                    }
+                },
+                "label": "",
+                "selectMode": "singlerequired",
+                "type": "staticflex",
+                "values": [
+                    {
+                        "label": "Total"
+                    },
+                    {
+                        "label": "Maharashtra"
+                    },
+                    {
+                        "label": "Gujarat"
+                    },
+                    {
+                        "label": "Delhi"
+                    },
+                    {
+                        "label": "Madhya Pradesh"
+                    },
+                    {
+                        "label": "Rajasthan"
+                    },
+                    {
+                        "label": "Tamil Nadu"
+                    },
+                    {
+                        "label": "Uttar Pradesh"
+                    },
+                    {
+                        "label": "Andhra Pradesh"
+                    },
+                    {
+                        "label": "Telangana"
+                    },
+                    {
+                        "label": "West Bengal"
+                    },
+                    {
+                        "label": "Jammu and Kashmir"
+                    },
+                    {
+                        "label": "Karnataka"
+                    },
+                    {
+                        "label": "Kerala"
+                    },
+                    {
+                        "label": "Bihar"
+                    },
+                    {
+                        "label": "Punjab"
+                    },
+                    {
+                        "label": "Haryana"
+                    },
+                    {
+                        "label": "Odisha"
+                    },
+                    {
+                        "label": "Jharkhand"
+                    },
+                    {
+                        "label": "Chandigarh"
+                    },
+                    {
+                        "label": "Uttarakhand"
+                    },
+                    {
+                        "label": "Himachal Pradesh"
+                    },
+                    {
+                        "label": "Assam"
+                    },
+                    {
+                        "label": "Chhattisgarh"
+                    },
+                    {
+                        "label": "Andaman and Nicobar Islands"
+                    },
+                    {
+                        "label": "Ladakh"
+                    },
+                    {
+                        "label": "Meghalaya"
+                    },
+                    {
+                        "label": "Puducherry"
+                    },
+                    {
+                        "label": "Goa"
+                    },
+                    {
+                        "label": "Manipur"
+                    },
+                    {
+                        "label": "Tripura"
+                    },
+                    {
+                        "label": "Mizoram"
+                    },
+                    {
+                        "label": "Arunachal Pradesh"
+                    },
+                    {
+                        "label": "Nagaland"
+                    },
+                    {
+                        "label": "Dadra and Nagar Haveli"
+                    },
+                    {
+                        "label": "Daman and Diu"
+                    },
+                    {
+                        "label": "Lakshadweep"
+                    },
+                    {
+                        "label": "Sikkim"
+                    }
+                ],
+                "numbers": [],
+                "strings": [],
+                "groups": []
+            },
+            "GetChartData": {
+                "query": {
+                    "body": {},
+                    "path": "covid"
+                },
+                "type": "apex"
+            },
+            "GetStateConfirm": {
+                "query": {
+                    "body": {
+                        "selectedState": "{{cell(static_1.selection, 0, \"label\").asString()}}"
+                    },
+                    "path": "covidconfirmed"
+                },
+                "type": "apex"
+            }
+        },
+        "widgetStyle": {
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "#E6ECF2",
+            "borderEdges": [],
+            "borderRadius": 0,
+            "borderWidth": 1
+        },
+        "widgets": {
+            "table_1": {
+                "parameters": {
+                    "borderColor": "#54698d",
+                    "borderWidth": 1,
+                    "cell": {
+                        "backgroundColor": "#16325c",
+                        "fontColor": "#ffffff",
+                        "fontSize": 12
+                    },
+                    "columnProperties": {},
+                    "columns": [],
+                    "customBulkActions": [],
+                    "exploreLink": false,
+                    "header": {
+                        "backgroundColor": "#000000",
+                        "fontColor": "#ffffff",
+                        "fontSize": 14
+                    },
+                    "innerMajorBorderColor": "#54698d",
+                    "innerMinorBorderColor": "#54698d",
+                    "mode": "fittocontainer",
+                    "numberOfLines": 1,
+                    "pivoted": false,
+                    "showActionMenu": true,
+                    "step": "GetChartData",
+                    "verticalPadding": 8,
+                    "evenRowColor": null,
+                    "oddRowColor": null
+                },
+                "type": "table"
+            },
+            "number_4": {
+                "parameters": {
+                    "compact": false,
+                    "exploreLink": true,
+                    "measureField": "deaths",
+                    "numberColor": "#FFFFFF",
+                    "numberSize": 24,
+                    "showActionMenu": true,
+                    "step": "GetStateDeath",
+                    "textAlignment": "left",
+                    "title": "Deaths",
+                    "titleColor": "#FFFFFF",
+                    "titleSize": 24
+                },
+                "type": "number"
+            },
+            "number_3": {
+                "parameters": {
+                    "compact": false,
+                    "exploreLink": true,
+                    "measureField": "recovered",
+                    "numberColor": "#FFFFFF",
+                    "numberSize": 24,
+                    "showActionMenu": true,
+                    "step": "GetStaterecovered",
+                    "textAlignment": "left",
+                    "title": "Recovered",
+                    "titleColor": "#FFFFFF",
+                    "titleSize": 24
+                },
+                "type": "number"
+            },
+            "container_1": {
+                "parameters": {
+                    "alignmentX": "left",
+                    "alignmentY": "top",
+                    "fit": "original"
+                },
+                "type": "container"
+            },
+            "number_2": {
+                "parameters": {
+                    "compact": false,
+                    "exploreLink": true,
+                    "measureField": "active",
+                    "numberColor": "#FFFFFF",
+                    "numberSize": 24,
+                    "showActionMenu": true,
+                    "step": "GetStateActive",
+                    "textAlignment": "left",
+                    "title": "Active",
+                    "titleColor": "#FFFFFF",
+                    "titleSize": 24
+                },
+                "type": "number"
+            },
+            "number_1": {
+                "parameters": {
+                    "compact": false,
+                    "exploreLink": true,
+                    "measureField": "confirmed",
+                    "numberColor": "#FFFFFF",
+                    "numberSize": 24,
+                    "showActionMenu": true,
+                    "step": "GetStateConfirm",
+                    "textAlignment": "left",
+                    "title": "Confirmed",
+                    "titleColor": "#FFFFFF",
+                    "titleSize": 24
+                },
+                "type": "number"
+            },
+            "text_1": {
+                "parameters": {
+                    "fontSize": 24,
+                    "showActionMenu": true,
+                    "text": "State Updates",
+                    "textAlignment": "center",
+                    "textColor": "#FFFFFF"
+                },
+                "type": "text"
+            },
+            "text_3": {
+                "parameters": {
+                    "fontSize": 32,
+                    "showActionMenu": true,
+                    "text": "Covid '19 India (States)",
+                    "textAlignment": "center",
+                    "textColor": "#FFFFFF"
+                },
+                "type": "text"
+            },
+            "text_2": {
+                "parameters": {
+                    "fontSize": 32,
+                    "showActionMenu": true,
+                    "text": "India Covid '19 Updates",
+                    "textAlignment": "center",
+                    "textColor": "#FFFFFF"
+                },
+                "type": "text"
+            },
+            "listselector_1": {
+                "parameters": {
+                    "compact": false,
+                    "displayMode": "filter",
+                    "exploreLink": false,
+                    "filterStyle": {
+                        "titleColor": "#FFFFFF",
+                        "valueColor": "#FFFFFF"
+                    },
+                    "instant": true,
+                    "showActionMenu": true,
+                    "step": "static_1",
+                    "title": "label"
+                },
+                "type": "listselector"
+            },
+            "chart_1": {
+                "parameters": {
+                    "autoFitMode": "keepLabels",
+                    "showValues": true,
+                    "bins": {
+                        "breakpoints": {
+                            "high": 100,
+                            "low": 0
+                        },
+                        "bands": {
+                            "high": {
+                                "color": "#008000",
+                                "label": ""
+                            },
+                            "low": {
+                                "color": "#B22222",
+                                "label": ""
+                            },
+                            "medium": {
+                                "color": "#ffa500",
+                                "label": ""
+                            }
+                        }
+                    },
+                    "legend": {
+                        "descOrder": false,
+                        "showHeader": false,
+                        "show": true,
+                        "customSize": "auto",
+                        "position": "right-top",
+                        "inside": false
+                    },
+                    "axisMode": "sync",
+                    "tooltip": {
+                        "showBinLabel": true,
+                        "measures": [
+                            "deltaconfirmed",
+                            "deltadeaths",
+                            "deltarecovered"
+                        ],
+                        "showNullValues": false,
+                        "showPercentage": true,
+                        "showDimensions": true,
+                        "showMeasures": true,
+                        "customizeTooltip": false,
+                        "dimensions": [
+                            "state",
+                            "statecode",
+                            "updatedDate",
+                            "lastupdatedtime",
+                            "active"
+                        ]
+                    },
+                    "visualizationType": "hbar",
+                    "exploreLink": false,
+                    "title": {
+                        "fontSize": 14,
+                        "subtitleFontSize": 11,
+                        "label": "Case Updates (past 24 hours)",
+                        "align": "center",
+                        "subtitleLabel": ""
+                    },
+                    "binValues": false,
+                    "trellis": {
+                        "flipLabels": false,
+                        "showGridLines": true,
+                        "size": [
+                            100,
+                            100
+                        ],
+                        "enable": false,
+                        "type": "x",
+                        "chartsPerLine": 4
+                    },
+                    "showActionMenu": true,
+                    "measureAxis2": {
+                        "sqrtScale": false,
+                        "showTitle": false,
+                        "showAxis": true,
+                        "title": "",
+                        "customDomain": {
+                            "showDomain": false
+                        }
+                    },
+                    "measureAxis1": {
+                        "sqrtScale": false,
+                        "showTitle": false,
+                        "showAxis": true,
+                        "title": "",
+                        "customDomain": {
+                            "showDomain": false
+                        }
+                    },
+                    "theme": "waterDark",
+                    "step": "GetStateDelta",
+                    "dimensionAxis": {
+                        "showTitle": false,
+                        "customSize": "auto",
+                        "showAxis": true,
+                        "title": "",
+                        "icons": {
+                            "useIcons": false,
+                            "iconProps": {
+                                "fit": "cover",
+                                "column": "",
+                                "type": "round"
+                            }
+                        }
+                    },
+                    "applyConditionalFormatting": true
+                },
+                "type": "chart"
+            }
+        }
+    },
+    "datasets": []
+}

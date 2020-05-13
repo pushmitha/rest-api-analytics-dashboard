@@ -1,0 +1,87 @@
+@RestResource(urlMapping='/coviddelta')
+global with sharing class CovidDelta {
+    @HttpPost   
+    global static String data_val(String selectedState) {
+        List<StateWiseData> statedata = new List<StateWiseData>();
+        CovidStatusCoreData1 data = getStateWiseData();
+        
+        for(StateWiseData st : data.statewise ){
+            if(st.state == selectedState){
+                statedata.add(st);
+            }
+        }
+        return JSON.serialize(new PackagedReturnItem(statedata));
+    }
+    
+    public static CovidStatusCoreData1 getStateWiseData() {
+        String BaseEndpoint = System.Label.covidBaseEndpoint; //Retrieve the endpoint and statewise variable from custom label
+        String StateWise = System.Label.covidStateWise;
+        HttpResponse resp = makeAPICallout(BaseEndpoint,StateWise);
+        CovidStatusCoreData1 response = (CovidStatusCoreData1)System.JSON.deserialize(resp.getbody(), CovidStatusCoreData1.class);
+        if (response != null) {
+            return response;
+        }
+        return null;
+    }
+    
+    public static HttpResponse makeAPICallout(String BaseEndpoint,String StateWise) {
+        Http h = new Http();						//Make a request with the parameters set
+        HttpRequest req = new HttpRequest();
+        String endpoint = BaseEndpoint + StateWise;
+        req.setEndpoint(endpoint);
+        req.setMethod('GET');
+        HttpResponse res = h.send(req);				// Send the request, and return a response
+        if (res.getStatusCode() == 200 ) {
+            return res;
+        }
+        return null;
+    }
+    
+    public class ReturnMetadata {
+        public List<String> strings; 
+        public List<String> numbers; 
+        public List<String> groups;
+        public ReturnMetadata(List<String> strings, List<String> numbers, List<String> groups) {
+            this.strings = strings;
+            this.numbers = numbers;
+            this.groups = groups;
+        }
+    }
+    
+    public class PackagedReturnItem {
+        public List<StateWiseData> data;
+        public ReturnMetadata metadata;
+        public PackagedReturnItem(List<StateWiseData> data) {
+            this.data = data;
+            this.metadata = new ReturnMetadata(new List<String>{'state','statecode','updatedDate','lastupdatedtime','active'}, 
+                                               new List<String>{'deltaconfirmed','deltarecovered','deltadeaths'}, 
+                                               new List<String>{'state'});
+        }   
+    }  
+    public class CovidStatusCoreData1 {
+        public List<DailyKeyValues> key_values;
+        public List<StateWiseData> statewise;
+    }
+    
+    public class DailyKeyValues {
+        public String confirmeddelta;
+        public String counterforautotimeupdate;
+        public String deceaseddelta;
+        public String lastupdatedtime;
+        public String recovereddelta;
+        public String statesdelta;
+    }
+    
+    public class StateWiseData {
+        public Integer active;
+        public Integer confirmed;
+        public Integer deaths;
+        public Integer recovered;
+        public String state;
+        public String statecode;
+        public String lastupdatedtime;
+        public Integer deltaconfirmed;
+        public Integer deltadeaths;
+        public Integer deltarecovered;
+    }
+}
