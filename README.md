@@ -1,1 +1,2 @@
-#BlogPost https://www.absyz.com/tableau-crm-add-action-buttons-on-table-without-xmd
+# tableau-crm-add-action-buttons-on-table-without-xmd
+#BlogPost https://www.absyz.com/tableau-crm-add-action-buttons-on-table-without-xmd/
